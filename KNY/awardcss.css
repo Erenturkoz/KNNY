@@ -1,0 +1,66 @@
+body{
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+    margin: 0rem;
+    overflow: hidden;
+}
+
+#image-track {
+    display: flex;
+    gap: 4vmin;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(0%, -50%);
+    user-select: none;
+}
+
+#image-track > .image {
+    width: 30vmin;
+    height: 42vmin;
+    object-fit: cover;
+    object-position: 100% center;
+}
+@font-face {
+    font-family: myFont;
+    src: url(CloisterBlack.ttf);
+}
+h2 {
+    user-select: none;
+    font-family: myFont;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    margin-top: 130px;
+    font-size: 4vw;
+    color: black;
+    position: relative;
+    -webkit-text-stroke: 0.05vw rgb(41, 0, 0);
+    text-transform: uppercase;
+}
+h2::before
+{
+    content: attr(data-text);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    color: red;
+    -webkit-text-stroke: 0vw rgb(41, 0, 0);
+    overflow: hidden;
+    animation: animate 6s linear infinite;
+}
+@keyframes animate
+{
+    0%,10%,100%
+    {
+        width: 0; 
+    }
+    70%,90%
+    {
+        width: 100%; 
+    }
+}
+
